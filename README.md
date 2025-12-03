@@ -43,28 +43,31 @@ kids-story-generator/
 
 ## Workflow
 
-The enhanced `StoryFlow` (`src/workflows/story_flow.py`) orchestrates the following process:
+The `StoryFlow` (`src/workflows/story_flow.py`) orchestrates the following process:
 
 1.  **Writer Agent**:
     *   Generates a story draft based on the user's topic and age input.
     *   Critiques and refines the draft using a feedback loop (Writer → Critic → Refiner).
-2.  **Editor Agent** (NEW):
+2.  **Editor Agent** :
     *   Analyzes the complete story text.
     *   Intelligently splits it into 4-8 age-appropriate pages.
     *   Generates detailed illustration prompts for each page.
-3.  **Parallel Asset Generation** (ENHANCED):
+3.  **Parallel Asset Generation**:
     *   For each page:
         *   **Illustrator Agent** and **Narrator Agent** run in parallel.
         *   Generates illustration based on the custom prompt.
         *   Generates audio narration for the page text.
-4.  **Database Persistence** (NEW):
+4.  **Database Persistence**:
     *   Story metadata saved to SQLite database.
     *   All pages and asset paths tracked in database.
     *   Stories can be retrieved and viewed later.
 5.  **Output**:
     *   Files are saved in the `outputs/[story_id]/` directory.
     *   Database records stored in `storage/database/stories.db`.
-
+    *   Create outputs folder manually before first generation, generated image and audio files will be saved there.
+    *   Create storage folder with `storage/database/` in project root, the database files will be stored there.
+  (** make sure these folders exist before first run,else errors may occur **)
+ 
 ## Database Schema
 
 **Stories Table:**
@@ -133,5 +136,9 @@ The enhanced `StoryFlow` (`src/workflows/story_flow.py`) orchestrates the follow
 
 ## Python Environement
 -   Python 3.12 or higher is required to run this project.
--   use `uv` for package management and dependency resolution.
+-   use `uv` for package management and dependency resolution(optional)
 -   `.venv` for the virtual environment.
+-   
+
+## License
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
