@@ -1,6 +1,6 @@
-# Children Story Generator with Google Generative AI and Google-adk
+# Children Story Generator with Gemini(Google GenAI) and Google-adk
 
-This project is an agentic application that generates children's stories based on user input using Google Generative AI. It orchestrates a workflow to generate story text, illustrations, and audio narration with SQLite database persistence.
+This project is an agentic application that generates children's stories based on user input using Gemini(Google Gen AI) and Google-adk. It orchestrates a workflow to generate story text, illustrations, and audio narration with SQLite database persistence.Gemini-2.5-flash-image and gemini-2.5-flash-preview-tts are used for image and audio generation. Gemini-2.5-flash-lite is used for text generation and refinement.The initial version is a CLI application, with plans for a web-based GUI in the future.The project features modular design, parallel asset generation, and a robust database schema to manage stories and their associated assets.
 
 ## Features
 - **Agentic Workflow**: Uses `google-adk` to orchestrate specialized agents.
@@ -125,14 +125,14 @@ The `StoryFlow` (`src/workflows/story_flow.py`) orchestrates the following proce
 - **CRUD Operations**: Full Create, Read, Update, Delete support
 - **Story Retrieval**: View and browse previously generated stories
 
-## Future Work
+## Future Work/Enhancements
 -   **GUI**: Implement a web interface using Streamlit or Gradio
 -   **Cloud Storage**: Integrate with Google Cloud Storage for asset hosting
 -   **PDF Export**: Combine text and images into a printable PDF
--   **Enhanced Filtering**: Search stories by topic, age, date
--   **User Management**: Multi-user support with authentication
--   **Background Processing**: Use Celery for async story generation
--   
+-   **Add Human-in-the-Loop**: Allow user edits between stages, improving story quality and relevance.
+-   **More styles for illustrations and narrations**
+-   **Interactive Storytelling**: Enable user choices that affect story outcome.
+-   **Multilingual Support**: Expand story generation to multiple languages.
 
 ## Python Environement
 -   Python 3.12 or higher is required to run this project.
